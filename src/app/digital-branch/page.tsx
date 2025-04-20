@@ -53,7 +53,7 @@ export default function DigitalBranch() {
       </div>
 
       {/* Why People Trust Us */}
-      <div className="py-24 sm:py-32 bg-[#FDFCFB]">
+      <div id="trust" className="py-24 sm:py-32 bg-[#FDFCFB]">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl">

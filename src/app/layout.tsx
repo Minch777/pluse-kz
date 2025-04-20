@@ -22,11 +22,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ru" className="h-full scroll-smooth">
+    <html lang="ru" className="h-full scroll-smooth bg-white">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       </head>
-      <body className={`${inter.className} min-h-full bg-background text-text antialiased selection:bg-primary/20 selection:text-primary`}>
+      <body className={`${inter.className} min-h-full bg-white text-[#171717] antialiased selection:bg-primary/20 selection:text-primary`}>
         <Header />
         <main className="flex-grow">
           {children}

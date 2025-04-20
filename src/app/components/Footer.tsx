@@ -25,26 +25,52 @@ export default function Footer() {
             <div>
               <h3 className="text-sm font-semibold text-white">О компании</h3>
               <ul className="mt-6 space-y-4">
-                {['О нас', 'Партнёрство', 'Резидент Astana Hub', 'Поддержка'].map((item) => (
-                  <li key={item}>
-                    <Link href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
+                <li>
+                  <Link href="/digital-branch" className="text-sm text-gray-300 hover:text-white transition-colors">
+                    О нас
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/partners" className="text-sm text-gray-300 hover:text-white transition-colors">
+                    Партнёрство
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/digital-branch#trust" className="text-sm text-gray-300 hover:text-white transition-colors">
+                    Резидент Astana Hub
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/digital-branch" className="text-sm text-gray-300 hover:text-white transition-colors">
+                    Поддержка
+                  </Link>
+                </li>
               </ul>
             </div>
 
             <div>
               <h3 className="text-sm font-semibold text-white">Сервисы</h3>
               <ul className="mt-6 space-y-4">
-                {['Открытие счёта', 'BNPL', 'Pluse.Shopping', 'Онлайн-бухгалтерия'].map((item) => (
-                  <li key={item}>
-                    <Link href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
+                <li>
+                  <Link href="/account" className="text-sm text-gray-300 hover:text-white transition-colors">
+                    Открытие счёта
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/bnpl" className="text-sm text-gray-300 hover:text-white transition-colors">
+                    BNPL
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/shopping" className="text-sm text-gray-300 hover:text-white transition-colors">
+                    Pluse.Shopping
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/accounting" className="text-sm text-gray-300 hover:text-white transition-colors">
+                    Онлайн-бухгалтерия
+                  </Link>
+                </li>
               </ul>
             </div>
 
