@@ -90,7 +90,7 @@ export default function BankingPage() {
                       <div className="space-y-3">
                         <div className="flex justify-between items-center">
                           <div>
-                            <p className="text-sm font-medium text-[#1A1A1A]">Перевод ТОО "Альфа"</p>
+                            <p className="text-sm font-medium text-[#1A1A1A]">Перевод ТОО &quot;Альфа&quot;</p>
                             <p className="text-xs text-[#6B6B6B]">12:30, сегодня</p>
                           </div>
                           <p className="text-sm font-medium text-lime-600">+45 000 ₸</p>

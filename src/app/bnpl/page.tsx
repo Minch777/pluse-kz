@@ -145,7 +145,7 @@ export default function BnplPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                title: '80% покупателей приходят без денег',
+                title: "80% покупателей приходят без денег",
                 description: 'Не отдавайте клиента конкурентам — подключите рассрочку за 1 день.'
               },
               {
@@ -223,7 +223,7 @@ export default function BnplPage() {
                     Выберите банк
                   </h3>
                   <div className="grid grid-cols-2 gap-3">
-                    {['Kaspi.kz', 'Halyk'].map((bank, i) => (
+                    {["Kaspi.kz", 'Halyk'].map((bank, i) => (
                       <div key={i} className={`rounded-lg border ${i === 0 ? 'border-[#8F6ED5] bg-[#F9F5FF]' : 'border-[#E0E0E0]'} p-3 text-center text-sm font-medium ${i === 0 ? 'text-[#8F6ED5]' : 'text-[#6B6B6B]'}`}>
                         {bank}
                       </div>
@@ -269,37 +269,37 @@ export default function BnplPage() {
                 {[
                   {
                     icon: <CreditCard className="h-6 w-6 text-[#8F6ED5]" />,
-                    title: 'Подключение бесплатно',
+                    title: "Подключение бесплатно",
                     description: 'Не требует интеграций или бумаг — начните в тот же день'
                   },
                   {
                     icon: <Check className="h-6 w-6 text-[#8F6ED5]" />,
-                    title: 'Вы сами выбираете: рассрочка или кредит',
+                    title: "Вы сами выбираете: рассрочка или кредит",
                     description: 'Клиенту удобно, вам выгодно'
                   },
                   {
                     icon: <Calendar className="h-6 w-6 text-[#8F6ED5]" />,
-                    title: 'Продавайте на срок от 3 до 36 месяцев',
+                    title: "Продавайте на срок от 3 до 36 месяцев",
                     description: 'Подходит для разных цен и чеков'
                   },
                   {
                     icon: <Banknote className="h-6 w-6 text-[#8F6ED5]" />,
-                    title: 'Сумма до 3 000 000 ₸ на одного покупателя',
+                    title: "Сумма до 3 000 000 ₸ на одного покупателя",
                     description: 'Продавайте дорогие товары без стресса'
                   },
                   {
                     icon: <Percent className="h-6 w-6 text-[#8F6ED5]" />,
-                    title: 'Минимальная комиссия — от 3%',
+                    title: "Минимальная комиссия — от 3%",
                     description: 'И никаких скрытых платежей'
                   },
                   {
                     icon: <QrCode className="h-6 w-6 text-[#8F6ED5]" />,
-                    title: 'Клиент сам заполняет заявку по QR или ссылке',
+                    title: "Клиент сам заполняет заявку по QR или ссылке",
                     description: 'Заявка оформляется за 1–2 минуты'
                   },
                   {
                     icon: <Headset className="h-6 w-6 text-[#8F6ED5]" />,
-                    title: 'Персональный менеджер под вашу сферу',
+                    title: "Персональный менеджер под вашу сферу",
                     description: 'Поможет быстро решить любые вопросы'
                   }
                 ].map((card, index) => (
@@ -345,7 +345,7 @@ export default function BnplPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              'Вы определяете срок и процент для продажи',
+              "Вы определяете срок и процент для продажи",
               '0% комиссии — 2 недели после подключения',
               'Выписка клиента повышает вероятность одобрения',
               'Меньший % банку — больше прибыли',
@@ -383,27 +383,27 @@ export default function BnplPage() {
               },
               {
                 icon: <Sofa className="h-6 w-6 text-[#8F6ED5]" />,
-                title: 'Мебель и интерьер',
+                title: "Мебель и интерьер",
                 description: 'Диваны, кухни, матрасы — большинство клиентов предпочитает оплату частями.'
               },
               {
                 icon: <GraduationCap className="h-6 w-6 text-[#8F6ED5]" />,
-                title: 'Образование и курсы',
+                title: "Образование и курсы",
                 description: 'Онлайн-школы, тренинги и репетиторы — повысьте конверсию за счёт рассрочки.'
               },
               {
                 icon: <Stethoscope className="h-6 w-6 text-[#8F6ED5]" />,
-                title: 'Медицинские центры и стоматология',
+                title: "Медицинские центры и стоматология",
                 description: 'Рассрочка позволяет пациентам проходить лечение без стресса.'
               },
               {
                 icon: <Home className="h-6 w-6 text-[#8F6ED5]" />,
-                title: 'Товары для дома и хобби',
+                title: "Товары для дома и хобби",
                 description: 'Увлечения, спорт, ремонт и декор — клиенты готовы платить частями.'
               },
               {
                 icon: <ShoppingBag className="h-6 w-6 text-[#8F6ED5]" />,
-                title: 'Любой онлайн- или офлайн-бизнес',
+                title: "Любой онлайн- или офлайн-бизнес",
                 description: 'Подключите рассрочку и увеличьте продажи независимо от вашей сферы.'
               }
             ].map((card, index) => (

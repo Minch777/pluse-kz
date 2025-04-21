@@ -122,7 +122,7 @@ export default function Footer() {
           <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-400">© 2025 Pluse.kz</p>
             <div className="text-sm text-gray-400">
-              Проект реализуется ТОО "Persons" БИН 220640014105 в сотрудничестве с АО «Bank RBK» (лицензия №1.2.100/245/41 от 05.04.2021 г., выдана АРРФР)
+              Проект реализуется ТОО &quot;Persons&quot; БИН 220640014105 в сотрудничестве с АО «Bank RBK» (лицензия №1.2.100/245/41 от 05.04.2021 г., выдана АРРФР)
             </div>
           </div>
         </div>

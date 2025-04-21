@@ -119,7 +119,7 @@ export default function AccountPage() {
                       <Building2 className="w-6 h-6 text-[#8F6ED5] mr-3" />
                       <div>
                         <p className="text-[#6B6B6B] text-xs">Компания</p>
-                        <p className="text-[#1A1A1A]">ТОО "Ваша компания"</p>
+                        <p className="text-[#1A1A1A]">ТОО &quot;Ваша компания&quot;</p>
                       </div>
                     </div>
                   </div>

@@ -128,7 +128,7 @@ export default function RegisterCompanyPage() {
                         <div className="absolute top-28 left-4 right-8 h-4 bg-[#F0F4FF] rounded"></div>
                         <div className="absolute top-36 left-4 right-20 h-4 bg-[#F0F4FF] rounded"></div>
                         <div className="absolute top-44 left-4 right-4 h-12 bg-[#E0FF4F] rounded-lg flex items-center justify-center">
-                          <div className="font-bold text-[#1A1A1A] text-xs">ТОО "PLUSE"</div>
+                          <div className="font-bold text-[#1A1A1A] text-xs">ТОО &quot;PLUSE&quot;</div>
                         </div>
                       </div>
                       
@@ -175,22 +175,22 @@ export default function RegisterCompanyPage() {
               },
               {
                 icon: <BarChart className="h-6 w-6 text-[#8F6ED5]" />,
-                title: 'Выберем ОКЭД и налоговый режим',
+                title: "Выберем ОКЭД и налоговый режим",
                 description: 'Оптимальный вариант для вашего бизнеса'
               },
               {
                 icon: <CreditCard className="h-6 w-6 text-[#8F6ED5]" />,
-                title: 'Поставим ТОО на учёт по НДС',
+                title: "Поставим ТОО на учёт по НДС",
                 description: 'Если это необходимо для вашего бизнеса'
               },
               {
                 icon: <Globe className="h-6 w-6 text-[#8F6ED5]" />,
-                title: 'Поможем иностранным резидентам',
+                title: "Поможем иностранным резидентам",
                 description: 'Полное сопровождение для нерезидентов РК'
               },
               {
                 icon: <Calculator className="h-6 w-6 text-[#8F6ED5]" />,
-                title: 'Возьмем на себя бухгалтерию',
+                title: "Возьмем на себя бухгалтерию",
                 description: 'Первый месяц бухгалтерия бесплатно'
               },
             ].map((item, index) => (
@@ -226,22 +226,22 @@ export default function RegisterCompanyPage() {
             {[
               {
                 icon: <Building className="h-8 w-8 text-[#8F6ED5]" />,
-                title: 'Готовое ТОО',
-                description: 'Зарегистрированное юридическое лицо со всеми документами, печатью, электронной подписью и доступом в госорганы'
+                title: "Готовое ТОО",
+                description: 'Зарегистрированное юридическое лицо со всеми документами, печатью, электронной подписью'
               },
               {
                 icon: <Clock className="h-8 w-8 text-[#8F6ED5]" />,
-                title: 'Онлайн-бухгалтерию с напоминаниями',
+                title: "Онлайн-бухгалтерию с напоминаниями",
                 description: 'Доступ к сервису автоматической бухгалтерии, который напомнит о сроках сдачи отчетности и уплаты налогов'
               },
               {
                 icon: <FileSpreadsheet className="h-8 w-8 text-[#8F6ED5]" />,
-                title: 'Шаблоны договоров и актов',
+                title: "Шаблоны договоров и актов",
                 description: 'Готовые документы для ведения бизнеса: договоры, акты, счета, накладные и другие необходимые формы'
               },
               {
                 icon: <FolderOpen className="h-8 w-8 text-[#8F6ED5]" />,
-                title: 'Доступ ко всем документам',
+                title: "Доступ ко всем документам",
                 description: 'Круглосуточный доступ ко всем документам компании в личном кабинете: учредительные и бухгалтерские документы'
               },
             ].map((item, index) => (
@@ -337,22 +337,22 @@ export default function RegisterCompanyPage() {
                 {[
                   {
                     icon: <MessageSquare className="h-6 w-6 text-[#8F6ED5]" />,
-                    title: 'Персональный менеджер',
+                    title: "Персональный менеджер",
                     description: 'Выделенный специалист будет вести ваш проект от начала до конца, решая все вопросы максимально быстро'
                   },
                   {
                     icon: <HeadphonesIcon className="h-6 w-6 text-[#8F6ED5]" />,
-                    title: 'Чат без ожиданий',
+                    title: "Чат без ожиданий",
                     description: 'Средняя скорость ответа на сообщения — 5 минут. Вам не придётся ждать часами, чтобы получить консультацию'
                   },
                   {
                     icon: <Calculator className="h-6 w-6 text-[#8F6ED5]" />,
-                    title: 'Вся бухгалтерия на нас',
+                    title: "Вся бухгалтерия на нас",
                     description: 'Мы поможем с начальными настройками бухгалтерии, первичной документацией и отчетностью'
                   },
                   {
                     icon: <Shield className="h-6 w-6 text-[#8F6ED5]" />,
-                    title: 'Поддержка по налогам и отчётности',
+                    title: "Поддержка по налогам и отчётности",
                     description: 'Юристы и бухгалтеры проконсультируют по всем вопросам касательно налогов и отчетности'
                   },
                 ].map((item, index) => (
@@ -392,27 +392,27 @@ export default function RegisterCompanyPage() {
             {[
               {
                 icon: <Briefcase className="h-6 w-6 text-[#8F6ED5]" />,
-                title: 'Фрилансеры',
+                title: "Фрилансеры",
                 description: 'Легализуйте свою деятельность и получите доступ к корпоративным клиентам'
               },
               {
                 icon: <BarChart className="h-6 w-6 text-[#8F6ED5]" />,
-                title: 'Стартапы',
+                title: "Стартапы",
                 description: 'Быстрый запуск юридического лица для привлечения инвестиций и масштабирования'
               },
               {
                 icon: <ShoppingBag className="h-6 w-6 text-[#8F6ED5]" />,
-                title: 'Онлайн-магазины',
+                title: "Онлайн-магазины",
                 description: 'Возможность принимать официальные платежи и работать с крупными маркетплейсами'
               },
               {
                 icon: <Flag className="h-6 w-6 text-[#8F6ED5]" />,
-                title: 'Иностранцы',
+                title: "Иностранцы",
                 description: 'Полное сопровождение и помощь в регистрации бизнеса для нерезидентов'
               },
               {
                 icon: <Users className="h-6 w-6 text-[#8F6ED5]" />,
-                title: 'Начинающие предприниматели',
+                title: "Начинающие предприниматели",
                 description: 'Подробные консультации и поддержка для тех, кто только начинает свой бизнес'
               },
             ].map((item, index) => (

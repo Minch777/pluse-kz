@@ -55,7 +55,7 @@ export default function ShoppingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="text-center lg:text-left">
               <h1 className="text-4xl md:text-6xl font-bold text-[#1A1A1A] mb-8">
-                Интернет-магазин без комиссий — {' '}
+                Интернет-магазин без комиссий — { }
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8F6ED5] to-lime-500">
                   за 1 день
                 </span>

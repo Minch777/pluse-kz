@@ -105,7 +105,7 @@ export default function Header() {
             <Link 
               href="/partners" 
               className={`text-[#4A4A4A] text-sm hover:text-[#8F6ED5] transition-colors ${
-                pathname === '/partners' ? 'text-[#8F6ED5]' : ''
+                pathname === "/partners" ? 'text-[#8F6ED5]' : ''
               }`}
             >
               Партнёрам
@@ -113,7 +113,7 @@ export default function Header() {
             <Link 
               href="/digital-branch" 
               className={`text-[#4A4A4A] text-sm hover:text-[#8F6ED5] transition-colors ${
-                pathname === '/digital-branch' ? 'text-[#8F6ED5]' : ''
+                pathname === "/digital-branch" ? 'text-[#8F6ED5]' : ''
               }`}
             >
               Цифровой филиал

@@ -139,7 +139,7 @@ const Hero = () => {
 }
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState('bnpl')
+  const [activeTab, setActiveTab] = useState("bnpl")
   const [currentBnplStat, setCurrentBnplStat] = useState(0)
   const [currentShopStat, setCurrentShopStat] = useState(0)
   const [isVisible, setIsVisible] = useState(false)
@@ -297,7 +297,7 @@ export default function Home() {
                 </div>
                 <div className="order-1 lg:order-2">
                   <div className="bg-white rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)]">
-                    {activeTab === 'bnpl' && (
+                    {activeTab === "bnpl" && (
                       <div className="space-y-6">
                         <div className="flex items-center justify-between">
                           <div className="space-y-1">
@@ -318,7 +318,7 @@ export default function Home() {
                         </div>
                       </div>
                     )}
-                    {activeTab === 'shopping' && (
+                    {activeTab === "shopping" && (
                       <div className="space-y-6">
                         <div className="grid grid-cols-2 gap-4">
                           <div className="bg-[#EDFFLF] rounded-xl p-4 aspect-square"></div>
@@ -358,10 +358,10 @@ export default function Home() {
                         <div className="h-32 bg-[#FDFCFB] rounded-xl"></div>
                       </div>
                     )}
-                    {activeTab === 'other' && (
+                    {activeTab === "other" && (
                       <div className="grid grid-cols-3 gap-6">
                         {[
-                          { icon: '💳', label: 'Бизнес-карта' },
+                          { icon: "💳", label: "Бизнес-карта" },
                           { icon: '🔍', label: 'Проверка' },
                           { icon: '🏦', label: 'Счёт' }
                         ].map((item, index) => (
@@ -636,7 +636,7 @@ export default function Home() {
           <div className="mx-auto mt-16 max-w-3xl">
             {[
               {
-                question: 'Как открыть счёт в Pluse.kz?',
+                question: "Как открыть счёт в Pluse.kz?",
                 answer: 'Регистрация занимает 5 минут, всё онлайн. После подтверждения личности вы получаете доступ ко всем сервисам.'
               },
               {
