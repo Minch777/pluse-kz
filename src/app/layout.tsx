@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+import { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from './components/Header'
@@ -13,6 +13,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Pluse.kz — финансовые сервисы для бизнеса',
   description: 'BNPL, интернет-магазин и онлайн-бухгалтерия для вашего бизнеса',
+}
+
+export const viewport: Viewport = {
   themeColor: '#7F56D9',
 }
 

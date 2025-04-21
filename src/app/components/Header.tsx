@@ -18,8 +18,8 @@ export default function Header() {
             <Image
               src="/logo.png"
               alt="Pluse.kz"
-              width={120}
-              height={32}
+              width={280}
+              height={80}
               className="h-8 w-auto"
               priority
             />
