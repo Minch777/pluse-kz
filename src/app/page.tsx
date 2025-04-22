@@ -23,8 +23,8 @@ const services = [
     id: 'bnpl',
     icon: CreditCard,
     name: 'BNPL (рассрочка)',
-    title: 'Продавайте больше — клиенты платят частями',
-    description: 'Вы получаете деньги сразу. 0% для клиента. Одобрение за 10 минут.',
+    title: 'Продавайте больше с выгодной рассрочкой',
+    description: 'Вы сами выбираете срок и сумму.\nРешение — за 2 минуты.',
     href: '/bnpl',
     cta: 'Подключить BNPL'
   },
@@ -44,7 +44,7 @@ const services = [
     title: 'Бухгалтерия, которая считает за вас',
     description: 'Синхронизация с налоговой, автоматические отчёты и напоминания.',
     href: '/accounting',
-    cta: 'Попробовать бесплатно'
+    cta: 'Скоро'
   },
   {
     id: 'bank',
@@ -742,13 +742,18 @@ export default function Home() {
                           className="inline-flex items-center text-[#8F6ED5] font-medium hover:opacity-80 transition-opacity"
                         >
                           Узнать подробнее →
-                        </Link>
+                    </Link>
                       </div>
                     )}
                     {(activeTab === "other" || activeTab === "accounting") && (
                       <Link
                         href={activeService?.href || '#'}
-                        className="bg-[#8F6ED5] text-white px-8 py-4 rounded-2xl text-base font-medium shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300"
+                        className={`${
+                          activeTab === "accounting" 
+                            ? "bg-[#9CA3AF] cursor-not-allowed" 
+                            : "bg-[#8F6ED5] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
+                        } text-white px-8 py-4 rounded-2xl text-base font-medium shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300`}
+                        onClick={(e) => activeTab === "accounting" && e.preventDefault()}
                       >
                         {activeService?.cta}
                       </Link>
@@ -759,136 +764,242 @@ export default function Home() {
                   <div className="bg-white rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)]">
                     {activeTab === "bnpl" && (
                       <div className="space-y-6">
-                        <div className="flex items-center justify-between">
+                        {/* Header */}
+                        <div className="flex items-center justify-between mb-4">
                           <div className="space-y-1">
                             <div className="text-lg font-medium text-[#8F6ED5]">Рассрочка 0%</div>
-                            <div className="text-sm text-[#4A4A4A]">ID: 12345-KZ</div>
+                            <div className="text-sm text-[#4A4A4A]">Быстрое подключение</div>
                           </div>
-                          <div className="relative h-12 w-12">
-                            <Image
-                              src="/icon_bnpl.svg"
-                              alt="BNPL Icon"
-                              fill
-                              className="object-contain"
-                            />
+                          <div className="relative w-14 h-14 flex items-center justify-center">
+                            <div className="relative w-12 h-12 flex flex-row justify-center gap-2">
+                              <div className="w-2 h-full bg-[#F472B6] rounded-full"></div>
+                              <div className="w-2 h-full bg-[#F472B6] rounded-full"></div>
+                              <div className="w-2 h-full bg-[#F472B6] rounded-full"></div>
                           </div>
                         </div>
-                        <div className="space-y-4">
-                          <div className="bg-[#F9FAFF] rounded-xl p-4">
-                            <div className="flex items-center justify-between mb-2">
-                              <span className="text-sm text-[#4A4A4A]">Сумма покупки</span>
-                              <span className="text-lg font-medium text-[#1A1A1A]">240 000 ₸</span>
                         </div>
-                            <div className="flex items-center justify-between">
-                              <span className="text-sm text-[#4A4A4A]">Ежемесячный платеж</span>
-                              <span className="text-lg font-medium text-[#8F6ED5]">40 000 ₸</span>
+
+                        {/* Mini Interface */}
+                        <div className="bg-white rounded-xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.06)]">
+                          <div className="space-y-4">
+                            <div className="flex justify-between items-center pb-3 border-b border-[#F0F0F0]">
+                              <span className="text-sm text-[#4A4A4A]">ID клиента</span>
+                              <span className="text-sm font-medium text-[#1A1A1A]">12345-KZ</span>
                             </div>
+                            <div className="flex justify-between items-center">
+                              <span className="text-sm text-[#4A4A4A]">Сумма</span>
+                              <span className="text-lg font-medium text-[#1A1A1A]">1 200 000 ₸</span>
+                            </div>
+                            <div className="flex justify-between items-center">
+                              <span className="text-sm text-[#4A4A4A]">Срок</span>
+                              <span className="text-lg font-medium text-[#1A1A1A]">12 месяцев</span>
+                            </div>
+                            <div className="flex justify-between items-center">
+                              <span className="text-sm text-[#4A4A4A]">Ежемесячный платёж</span>
+                              <span className="text-lg font-medium text-[#8F6ED5]">100 000 ₸</span>
+                            </div>
+                            <div className="flex items-center gap-2 bg-[#F0FFF4] rounded-lg px-4 py-2">
+                              <div className="w-5 h-5 rounded-full bg-[#4ADE80] flex items-center justify-center">
+                                <Check className="w-3 h-3 text-white" />
+                              </div>
+                              <span className="text-sm font-medium text-[#1A1A1A]">Одобрено</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Benefits */}
+                        <div className="grid grid-cols-3 gap-4">
+                          <div className="bg-[#F9FAFF] rounded-xl p-4 text-center">
+                            <div className="w-10 h-10 bg-[#F0F0F0] rounded-full flex items-center justify-center mx-auto mb-3">
+                              <div className="text-xl">🧾</div>
+                            </div>
+                            <div className="text-sm font-medium text-[#1A1A1A]">Комиссия</div>
+                            <div className="text-xs text-[#4A4A4A] mt-1">от 3%</div>
+                          </div>
+                          <div className="bg-[#F9FAFF] rounded-xl p-4 text-center">
+                            <div className="w-10 h-10 bg-[#F0F0F0] rounded-full flex items-center justify-center mx-auto mb-3">
+                              <div className="text-xl">⚡️</div>
+                            </div>
+                            <div className="text-sm font-medium text-[#1A1A1A]">Быстро</div>
+                            <div className="text-xs text-[#4A4A4A] mt-1">2 минуты</div>
+                          </div>
+                          <div className="bg-[#F9FAFF] rounded-xl p-4 text-center">
+                            <div className="w-10 h-10 bg-[#F0F0F0] rounded-full flex items-center justify-center mx-auto mb-3">
+                              <div className="text-xl">💰</div>
+                            </div>
+                            <div className="text-sm font-medium text-[#1A1A1A]">Гибко</div>
+                            <div className="text-xs text-[#4A4A4A] mt-1">до 3 000 000 ₸</div>
                           </div>
                         </div>
                       </div>
                     )}
                     {activeTab === "shopping" && (
                       <div className="space-y-6">
-                        <div className="flex items-center justify-between mb-2">
+                        {/* Header */}
+                        <div className="flex items-center justify-between mb-4">
                           <div className="space-y-1">
-                            <div className="text-lg font-medium text-[#8F6ED5]">Ваш магазин</div>
-                            <div className="text-sm text-[#4A4A4A]">pluse.market/demo</div>
+                            <div className="text-lg font-medium text-[#8F6ED5]">Pluse.Shopping</div>
+                            <div className="text-sm text-[#4A4A4A]">Готовый магазин за 1 день</div>
                           </div>
-                          <div className="relative h-16 w-16 translate-y-2">
-                            <Image
-                              src="/icon_shop.svg"
-                              alt="Shopping Icon"
-                              fill
-                              className="object-contain"
-                            />
+                          <div className="relative w-14 h-14 flex items-center justify-center">
+                            <div className="w-14 h-14 bg-[#E0FF4F] rounded-xl flex items-center justify-center">
+                              <div className="relative w-8 h-8 flex items-center justify-center">
+                                <div className={`
+                                  w-7 h-8
+                                  bg-[#F472B6]
+                                  transform rotate-[-12deg]
+                                  relative
+                                `}
+                                style={{
+                                  clipPath: 'polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 25%)'
+                                }}
+                                >
+                                  <div className="absolute top-[12%] left-[12%] w-1.5 h-1.5 rounded-full bg-[#E0FF4F]"></div>
+                                  <div className="absolute top-0 left-0 w-[25%] h-[25%] bg-[#EC4899]"
+                                    style={{
+                                      clipPath: 'polygon(0 100%, 100% 0, 0 0)'
+                                    }}
+                                  ></div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
+
+                        {/* Products Mini Interface */}
+                        <div className="bg-white rounded-xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.06)]">
                         <div className="grid grid-cols-2 gap-4">
-                          <div className="bg-[#F9FAFF] rounded-xl p-4">
-                            <div className="w-full h-24 bg-[#EDFFLF] rounded-lg mb-3 flex items-center justify-center">
-                              <Smartphone className="h-8 w-8 text-[#8F6ED5]" />
+                            <div className="bg-[#F9FAFF] rounded-xl p-4">
+                              <div className="w-full h-24 bg-[#EDFFLF] rounded-lg mb-3 flex items-center justify-center relative">
+                                <Image 
+                                  src="/iphone.svg"
+                                  alt="iPhone"
+                                  width={72}
+                                  height={72}
+                                  className="w-auto h-24 object-contain"
+                                />
                         </div>
-                            <div className="space-y-2">
-                              <div className="text-sm font-medium text-[#1A1A1A]">iPhone 15</div>
-                              <div className="text-lg font-medium text-[#8F6ED5]">499 990 ₸</div>
-                              <div className="text-xs text-[#4A4A4A]">Доступна рассрочка</div>
+                              <div className="space-y-2">
+                                <div className="text-sm font-medium text-[#1A1A1A]">iPhone 15</div>
+                                <div className="text-lg font-medium text-[#8F6ED5]">499 990 ₸</div>
+                                <div className="text-xs text-[#4A4A4A]">Доступна рассрочка</div>
                           </div>
                           </div>
-                          <div className="bg-[#F9FAFF] rounded-xl p-4">
-                            <div className="w-full h-24 bg-[#EDFFLF] rounded-lg mb-3 flex items-center justify-center">
-                              <Laptop className="h-8 w-8 text-[#8F6ED5]" />
-                            </div>
-                            <div className="space-y-2">
-                              <div className="text-sm font-medium text-[#1A1A1A]">MacBook Air</div>
-                              <div className="text-lg font-medium text-[#8F6ED5]">699 990 ₸</div>
-                              <div className="text-xs text-[#4A4A4A]">Доступна рассрочка</div>
+                            <div className="bg-[#F9FAFF] rounded-xl p-4">
+                              <div className="w-full h-24 bg-[#EDFFLF] rounded-lg mb-3 flex items-center justify-center relative">
+                                <Image 
+                                  src="/laptop.svg"
+                                  alt="MacBook"
+                                  width={96}
+                                  height={96}
+                                  className="w-auto h-24 object-contain"
+                                />
+                              </div>
+                              <div className="space-y-2">
+                                <div className="text-sm font-medium text-[#1A1A1A]">MacBook Air</div>
+                                <div className="text-lg font-medium text-[#8F6ED5]">699 990 ₸</div>
+                                <div className="text-xs text-[#4A4A4A]">Доступна рассрочка</div>
+                              </div>
                             </div>
                           </div>
                         </div>
-                        <div className="grid grid-cols-3 gap-4 bg-[#F9FAFF] rounded-xl p-4">
-                          <div className="text-center">
-                            <div className="text-2xl font-medium text-[#1A1A1A]">24</div>
-                            <div className="text-sm text-[#4A4A4A]">Товара</div>
+
+                        {/* Benefits */}
+                        <div className="grid grid-cols-3 gap-4">
+                          <div className="bg-[#F9FAFF] rounded-xl p-4 text-center">
+                            <div className="w-10 h-10 bg-[#F0F0F0] rounded-full flex items-center justify-center mx-auto mb-3">
+                              <div className="text-xl">🧾</div>
+                            </div>
+                            <div className="text-sm font-medium text-[#1A1A1A]">Бесплатно</div>
+                            <div className="text-xs text-[#4A4A4A] mt-1">Магазин за 1 день</div>
                           </div>
-                          <div className="text-center">
-                            <div className="text-2xl font-medium text-[#1A1A1A]">12</div>
-                            <div className="text-sm text-[#4A4A4A]">Заказов</div>
+                          <div className="bg-[#F9FAFF] rounded-xl p-4 text-center">
+                            <div className="w-10 h-10 bg-[#F0F0F0] rounded-full flex items-center justify-center mx-auto mb-3">
+                              <div className="text-xl">🚚</div>
+                            </div>
+                            <div className="text-sm font-medium text-[#1A1A1A]">Доставка</div>
+                            <div className="text-xs text-[#4A4A4A] mt-1">Подключена логистика</div>
                           </div>
-                          <div className="text-center">
-                            <div className="text-2xl font-medium text-[#8F6ED5]">4.9</div>
-                            <div className="text-sm text-[#4A4A4A]">Рейтинг</div>
+                          <div className="bg-[#F9FAFF] rounded-xl p-4 text-center">
+                            <div className="w-10 h-10 bg-[#F0F0F0] rounded-full flex items-center justify-center mx-auto mb-3">
+                              <div className="text-xl">💳</div>
+                            </div>
+                            <div className="text-sm font-medium text-[#1A1A1A]">Оплата</div>
+                            <div className="text-xs text-[#4A4A4A] mt-1">Встроен эквайринг и рассрочка</div>
                           </div>
                         </div>
                       </div>
                     )}
-                    {activeTab === 'accounting' && (
+                    {activeTab === "accounting" && (
                       <div className="space-y-6">
-                        <div className="flex items-center justify-between">
+                        {/* Header */}
+                        <div className="flex items-center justify-between mb-4">
                           <div className="space-y-1">
-                            <div className="text-lg font-medium text-[#8F6ED5]">Финансовый отчёт</div>
-                            <div className="text-sm text-[#4A4A4A]">Октябрь 2023</div>
+                            <div className="text-lg font-medium text-[#8F6ED5]">Бухгалтерия</div>
+                            <div className="text-sm text-[#4A4A4A]">Всё для отчётности — в одном месте</div>
                           </div>
-                          <div className="h-12 w-12 bg-[#E0FF4F] rounded-full flex items-center justify-center">
-                            <Calculator className="h-6 w-6 text-[#1A1A1A]" />
+                          <div className="h-14 w-14 bg-[#40E0D0] rounded-xl flex items-center justify-center">
+                            <div className="w-8 h-10 bg-white rounded-lg p-1">
+                              <div className="grid grid-cols-3 gap-0.5">
+                                {[...Array(9)].map((_, i) => (
+                                  <div key={i} className="w-1.5 h-1.5 bg-[#40E0D0] rounded-sm"></div>
+                                ))}
+                              </div>
                             </div>
                           </div>
-                        <div className="space-y-4">
-                          <div className="bg-[#F9FAFF] rounded-xl p-4">
-                            <div className="flex justify-between items-center mb-3">
-                              <span className="text-[#4A4A4A]">Доходы</span>
-                              <span className="text-lg font-medium text-[#1A1A1A]">1 250 000 ₸</span>
                         </div>
-                            <div className="flex justify-between items-center mb-3">
-                              <span className="text-[#4A4A4A]">Расходы</span>
-                              <span className="text-lg font-medium text-[#1A1A1A]">850 000 ₸</span>
-                        </div>
-                            <div className="h-px bg-[#EDFFLF] my-3"></div>
+
+                        {/* Financial Report Interface */}
+                        <div className="bg-white rounded-xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.06)]">
+                          <div className="space-y-4">
+                            <div className="flex justify-between items-center pb-3 border-b border-[#F0F0F0]">
+                              <span className="text-sm text-[#4A4A4A]">Финансовый отчёт</span>
+                              <span className="text-sm font-medium text-[#1A1A1A]">2025 год</span>
+                            </div>
                             <div className="flex justify-between items-center">
-                              <span className="text-[#4A4A4A]">Прибыль</span>
+                              <span className="text-sm text-[#4A4A4A]">Доходы</span>
+                              <span className="text-lg font-medium text-[#1A1A1A]">1 250 000 ₸</span>
+                            </div>
+                            <div className="flex justify-between items-center">
+                              <span className="text-sm text-[#4A4A4A]">Расходы</span>
+                              <span className="text-lg font-medium text-[#1A1A1A]">850 000 ₸</span>
+                            </div>
+                            <div className="flex justify-between items-center">
+                              <span className="text-sm text-[#4A4A4A]">Прибыль</span>
                               <span className="text-lg font-medium text-[#8F6ED5]">400 000 ₸</span>
                             </div>
-                          </div>
-                          <div className="grid grid-cols-3 gap-4">
-                            <div className="bg-[#F0FFF4] rounded-xl p-3 text-center">
-                              <div className="text-sm text-[#4A4A4A]">НДС</div>
-                              <div className="text-lg font-medium text-[#1A1A1A]">Оплачен</div>
-                            </div>
-                            <div className="bg-[#F0FFF4] rounded-xl p-3 text-center">
-                              <div className="text-sm text-[#4A4A4A]">Налоги</div>
-                              <div className="text-lg font-medium text-[#1A1A1A]">Сданы</div>
-                            </div>
-                            <div className="bg-[#FFF4F0] rounded-xl p-3 text-center">
-                              <div className="text-sm text-[#4A4A4A]">ЗП</div>
-                              <div className="text-lg font-medium text-[#1A1A1A]">3 дня</div>
+                            <div className="flex items-center gap-2 bg-[#F0FFF4] rounded-lg px-4 py-2">
+                              <div className="w-5 h-5 rounded-full bg-[#4ADE80] flex items-center justify-center">
+                                <Check className="w-3 h-3 text-white" />
+                              </div>
+                              <span className="text-sm font-medium text-[#1A1A1A]">Отчёт готов</span>
                             </div>
                           </div>
                         </div>
-                        <div className="bg-[#F9FAFF] rounded-xl p-4">
-                          <div className="flex items-center justify-between mb-3">
-                            <span className="text-sm text-[#4A4A4A]">График доходов</span>
-                            <span className="text-xs text-[#4A4A4A]">за 6 месяцев</span>
+
+                        {/* Benefits */}
+                        <div className="grid grid-cols-3 gap-4">
+                          <div className="bg-[#F9FAFF] rounded-xl p-4 text-center">
+                            <div className="w-10 h-10 bg-[#F0F0F0] rounded-full flex items-center justify-center mx-auto mb-3">
+                              <div className="text-xl">📄</div>
+                            </div>
+                            <div className="text-sm font-medium text-[#1A1A1A]">Автоматическая отчётность</div>
+                            <div className="text-xs text-[#4A4A4A] mt-1">910-я форма создается автоматически</div>
                           </div>
-                          <div className="h-24 bg-[#EDFFLF] rounded-lg"></div>
+                          <div className="bg-[#F9FAFF] rounded-xl p-4 text-center">
+                            <div className="w-10 h-10 bg-[#F0F0F0] rounded-full flex items-center justify-center mx-auto mb-3">
+                              <div className="text-xl">🔗</div>
+                            </div>
+                            <div className="text-sm font-medium text-[#1A1A1A]">Интеграция с налоговой</div>
+                            <div className="text-xs text-[#4A4A4A] mt-1">Всё готово для онлайн-отправки</div>
+                          </div>
+                          <div className="bg-[#F9FAFF] rounded-xl p-4 text-center">
+                            <div className="w-10 h-10 bg-[#F0F0F0] rounded-full flex items-center justify-center mx-auto mb-3">
+                              <div className="text-xl">💸</div>
+                            </div>
+                            <div className="text-sm font-medium text-[#1A1A1A]">Контроль расходов</div>
+                            <div className="text-xs text-[#4A4A4A] mt-1">Следим за налогами и зарплатами</div>
+                          </div>
                         </div>
                       </div>
                     )}
