@@ -308,10 +308,10 @@ export default function Home() {
                           <div className="w-full bg-gradient-to-br from-[#8F6ED5] to-[#6C4CB3] rounded-xl p-4 shadow-lg transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
                             <div className="flex items-center gap-2 mb-4">
                               <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                                <div className="relative w-5 h-5 flex flex-col justify-center gap-0.5">
-                                  <div className="h-0.5 w-full bg-white rounded-full"></div>
-                                  <div className="h-0.5 w-full bg-white rounded-full"></div>
-                                  <div className="h-0.5 w-full bg-white rounded-full"></div>
+                                <div className="relative w-6 h-6 flex flex-row justify-center gap-1">
+                                  <div className="w-1 h-full bg-white rounded-full"></div>
+                                  <div className="w-1 h-full bg-white rounded-full"></div>
+                                  <div className="w-1 h-full bg-white rounded-full"></div>
                                 </div>
                               </div>
                               <div>
@@ -365,7 +365,7 @@ export default function Home() {
                               </div>
                               <div>
                                 <h3 className="text-base font-semibold text-[#1A1A1A]">Магазин</h3>
-                                <p className="text-xs text-[#4A4A4A]">pluse.market/demo</p>
+                                <p className="text-xs text-[#4A4A4A]">pluse.shopping/demo</p>
                               </div>
                             </div>
                             <div className="grid grid-cols-3 gap-2">
