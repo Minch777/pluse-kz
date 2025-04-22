@@ -45,7 +45,7 @@ export default function TariffsPage() {
               </div>
               <p className="mt-4 text-sm leading-6 text-[#6B6B6B]">Идеально для малого бизнеса и начинающих предпринимателей.</p>
               <p className="mt-6 flex items-baseline gap-x-1">
-                <span className="text-4xl font-bold tracking-tight text-[#1A1A1A]">2 900 ₽</span>
+                <span className="text-4xl font-bold tracking-tight text-[#1A1A1A]">2 900 ₸</span>
                 <span className="text-sm font-semibold leading-6 text-[#6B6B6B]">/мес</span>
               </p>
               <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-[#4A4A4A]">
@@ -82,7 +82,7 @@ export default function TariffsPage() {
               </div>
               <p className="mt-4 text-sm leading-6 text-[#6B6B6B]">Оптимальный выбор для растущего бизнеса.</p>
               <p className="mt-6 flex items-baseline gap-x-1">
-                <span className="text-4xl font-bold tracking-tight text-[#1A1A1A]">7 500 ₽</span>
+                <span className="text-4xl font-bold tracking-tight text-[#1A1A1A]">7 500 ₸</span>
                 <span className="text-sm font-semibold leading-6 text-[#6B6B6B]">/мес</span>
               </p>
               <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-[#4A4A4A]">
@@ -123,7 +123,7 @@ export default function TariffsPage() {
               </div>
               <p className="mt-4 text-sm leading-6 text-[#6B6B6B]">Для крупного бизнеса с высоким объемом операций.</p>
               <p className="mt-6 flex items-baseline gap-x-1">
-                <span className="text-4xl font-bold tracking-tight text-[#1A1A1A]">19 900 ₽</span>
+                <span className="text-4xl font-bold tracking-tight text-[#1A1A1A]">14 500 ₸</span>
                 <span className="text-sm font-semibold leading-6 text-[#6B6B6B]">/мес</span>
               </p>
               <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-[#4A4A4A]">

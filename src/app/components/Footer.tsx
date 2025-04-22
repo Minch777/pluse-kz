@@ -26,7 +26,7 @@ export default function Footer() {
               <h3 className="text-sm font-semibold text-white">О компании</h3>
               <ul className="mt-6 space-y-4">
                 <li>
-                  <Link href="/digital-branch" className="text-sm text-gray-300 hover:text-white transition-colors">
+                  <Link href="/about" className="text-sm text-gray-300 hover:text-white transition-colors">
                     О нас
                   </Link>
                 </li>
@@ -36,12 +36,12 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/digital-branch#trust" className="text-sm text-gray-300 hover:text-white transition-colors">
+                  <Link href="/about#trust" className="text-sm text-gray-300 hover:text-white transition-colors">
                     Резидент Astana Hub
                   </Link>
                 </li>
                 <li>
-                  <Link href="/digital-branch" className="text-sm text-gray-300 hover:text-white transition-colors">
+                  <Link href="/about" className="text-sm text-gray-300 hover:text-white transition-colors">
                     Поддержка
                   </Link>
                 </li>

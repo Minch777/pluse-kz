@@ -110,10 +110,10 @@ export default function Header() {
             >
               Партнёрам
             </Link>
-            <Link 
-              href="/digital-branch" 
+            <Link
+              href="/about"
               className={`text-[#4A4A4A] text-sm hover:text-[#8F6ED5] transition-colors ${
-                pathname === "/digital-branch" ? 'text-[#8F6ED5]' : ''
+                pathname === "/about" ? 'text-[#8F6ED5]' : ''
               }`}
             >
               Цифровой филиал
@@ -145,7 +145,7 @@ export default function Header() {
             <Link href="/partners" className="block text-[#4A4A4A] hover:text-[#8F6ED5]">
               Партнёрам
             </Link>
-            <Link href="/digital-branch" className="block text-[#4A4A4A] hover:text-[#8F6ED5]">
+            <Link href="/about" className="block text-[#4A4A4A] hover:text-[#8F6ED5]">
               Цифровой филиал
             </Link>
             <Link 

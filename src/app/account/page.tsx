@@ -414,7 +414,7 @@ export default function AccountPage() {
                   <Link href="https://play.google.com" className="flex items-center justify-center px-6 py-3 rounded-xl bg-[#1A1A1A] text-white font-medium transition-all hover:bg-[#2A2A2A]">
                     <Download className="h-5 w-5 mr-2" />
                     Google Play
-                  </Link>
+              </Link>
                 </div>
               </div>
               
