@@ -145,7 +145,7 @@ export default function BnplPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                title: "80% покупателей приходят без денег",
+                title: '80% покупателей приходят без денег',
                 description: 'Не отдавайте клиента конкурентам — подключите рассрочку за 1 день.'
               },
               {
@@ -169,11 +169,11 @@ export default function BnplPage() {
                 description: 'Отвечаем быстро, как будто сами теряем клиента.'
               }
             ].map((card, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300">
-                <h3 className="text-xl font-semibold text-[#1A1A1A] mb-3">
+              <div key={index} className='bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300'>
+                <h3 className='text-xl font-semibold text-[#1A1A1A] mb-3'>
                   {card.title}
                 </h3>
-                <p className="text-[#6B6B6B]">
+                <p className='text-[#6B6B6B]'>
                   {card.description}
                 </p>
               </div>

@@ -649,71 +649,37 @@ export default function Home() {
           <div className="mx-auto mt-16 max-w-3xl">
             {[
               {
-                question: "Как открыть счёт в Pluse.kz?",
-                answer: 'Регистрация занимает 5 минут, всё онлайн. После подтверждения личности вы получаете доступ ко всем сервисам.'
+                title: 'Защита от блокировок',
+                description: 'Не теряйте деньги из-за блокировок — подключите резервный счёт за 1 день.'
               },
               {
-                question: 'Сколько стоит подключение?',
-                answer: 'Открытие счёта и базовые функции — бесплатно. Продвинутые сервисы доступны по подписке.'
+                title: 'Нет времени на банк',
+                description: 'Открываем счёт за вас — просто пришлите документы.'
               },
               {
-                question: 'Кто даёт рассрочку (BNPL)?',
-                answer: 'Pluse.kz — это агрегатор банков. Мы подключаем вас к банкам-партнёрам, которые одобряют заявки.'
+                title: 'Нужен белый оборот',
+                description: 'Поможем нарастить обороты для банков и партнёров.'
               },
               {
-                question: 'Могу ли я подключить только интернет-магазин или только бухгалтерию?',
-                answer: 'Да, вы можете использовать только нужные вам модули.'
+                title: 'Счёт заблокировали',
+                description: 'Разблокируем или откроем новый — без потери денег.'
               },
               {
-                question: 'Насколько безопасны мои данные?',
-                answer: 'Данные хранятся на защищённых серверах, передаются в зашифрованном виде, и мы соблюдаем все требования по безопасности.'
+                title: 'Защитим от блокировок',
+                description: 'Проверим ваши риски и дадим рекомендации.'
+              },
+              {
+                title: 'Ответов по неделям — не будет',
+                description: 'Отвечаем быстро, как будто сами теряем деньги.'
               }
-            ].map((faq, index) => (
-              <div 
-                key={index} 
-                className="group bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.06)] mb-4 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300"
-              >
-                <motion.button
-                  initial={false}
-                  className="flex w-full items-start justify-between text-left"
-                  onClick={() => {
-                    const newExpandedItems = new Set(expandedFaqItems)
-                    if (newExpandedItems.has(index)) {
-                      newExpandedItems.delete(index)
-                    } else {
-                      newExpandedItems.add(index)
-                    }
-                    setExpandedFaqItems(newExpandedItems)
-                  }}
-                >
-                  <span className="text-lg font-medium text-[#1A1A1A] pr-8">{faq.question}</span>
-                  <div className="flex-shrink-0">
-                    <div 
-                      className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-200 ${
-                        expandedFaqItems.has(index) ? 'bg-[#E0FF4F]' : 'bg-[#EDFFLF]'
-                      }`}
-                    >
-                      <ChevronDown
-                        className={`h-5 w-5 transform transition-transform duration-200 ${
-                          expandedFaqItems.has(index) ? 'rotate-180 text-[#1A1A1A]' : 'text-[#8F6ED5]'
-                        }`}
-                      />
-                    </div>
-                  </div>
-                </motion.button>
-                <AnimatePresence initial={false}>
-                  {expandedFaqItems.has(index) && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
-                      <p className="mt-4 text-[#4A4A4A] leading-relaxed pr-8">{faq.answer}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+            ].map((card, index) => (
+              <div key={index} className='bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300'>
+                <h3 className='text-xl font-semibold text-[#1A1A1A] mb-3'>
+                  {card.title}
+                </h3>
+                <p className='text-[#6B6B6B]'>
+                  {card.description}
+                </p>
               </div>
             ))}
           </div>
