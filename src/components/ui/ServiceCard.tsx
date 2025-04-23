@@ -91,11 +91,11 @@ const getServiceStyles = (id: string, isActive: boolean) => {
       active: 'from-[#8F6ED5] to-[#6C4CB3]',
       inactive: 'from-[#DEB887] to-[#D2B48C]',
       icon: (
-        <div className="grid grid-cols-2 gap-3">
-          <div className="w-6 h-6 bg-white rounded"></div>
-          <div className="w-6 h-6 bg-[#E0FF4F] rounded"></div>
-          <div className="w-6 h-6 bg-[#E0FF4F] rounded"></div>
-          <div className="w-6 h-6 bg-white rounded"></div>
+        <div className="grid grid-cols-2 gap-1.5 md:gap-3">
+          <div className="w-4 h-4 md:w-6 md:h-6 bg-white rounded"></div>
+          <div className="w-4 h-4 md:w-6 md:h-6 bg-[#E0FF4F] rounded"></div>
+          <div className="w-4 h-4 md:w-6 md:h-6 bg-[#E0FF4F] rounded"></div>
+          <div className="w-4 h-4 md:w-6 md:h-6 bg-white rounded"></div>
         </div>
       )
     }
@@ -114,42 +114,27 @@ export default function ServiceCard({ service, isActive, onClick }: ServiceCardP
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       transition={{ duration: 0.2 }}
-      className={`flex flex-col items-center group cursor-pointer relative ${
-        isActive ? 'after:content-[""] after:absolute after:bottom-[-12px] after:left-1/2 after:-translate-x-1/2 after:w-12 after:h-[3px] after:bg-[#8F6ED5] after:rounded-full' : ''
-      }`}
+      className={`flex flex-col items-center group cursor-pointer relative mb-9 md:mb-0`}
       onClick={onClick}
     >
       <div className={`
-        relative w-24 h-24 mb-4 
-        ${isActive 
-          ? 'scale-110 shadow-[0_8px_30px_rgba(143,110,213,0.3)]' 
-          : ''
-        }
+        relative w-16 h-16 md:w-24 md:h-24 mb-3 md:mb-6 
         transition-all duration-300
       `}>
         <div className={`
           absolute inset-0 bg-gradient-to-br 
           ${isActive ? styles.active : styles.inactive}
-          rounded-2xl transform rotate-[-5deg] shadow-xl
+          rounded-xl md:rounded-2xl transform rotate-[-5deg] shadow-xl
           transition-all duration-300
         `}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center scale-[0.7] md:scale-100">
           {styles.icon}
         </div>
       </div>
-      <span className={`text-sm font-medium transition-colors duration-200 ${
+      <span className={`text-[10px] md:text-sm font-medium text-center transition-colors duration-200 ${
         isActive ? 'text-[#8F6ED5]' : 'text-[#4A4A4A]'
       }`}>
         {service.name}
-        {isActive && (
-          <motion.span
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="inline-block ml-1"
-          >
-            →
-          </motion.span>
-        )}
       </span>
     </motion.div>
   )

@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { ShieldCheck, Award, Building } from 'lucide-react'
+import { ShieldCheck, Award, Building, LineChart, BarChart3, ArrowRight } from 'lucide-react'
 
 export default function DigitalBranch() {
   return (
@@ -23,34 +23,101 @@ export default function DigitalBranch() {
         </div>
       </div>
 
-      {/* Introduction Block */}
-      <div className="py-24 sm:py-32 bg-white">
+      {/* About Bank Block */}
+      <section className="py-24 sm:py-32 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute inset-y-0 w-full bg-[radial-gradient(100%_50%_at_50%_0%,_var(--tw-gradient-stops))] from-[#F0F4FF] via-white to-white opacity-60"></div>
+        </div>
+        
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl">
-                Pluse.kz — необанк для предпринимателей
-              </h2>
-              <p className="mt-6 text-lg text-[#4A4A4A] leading-relaxed">
-                Цифровой филиал Pluse.kz создан в партнёрстве с RBK Bank, чтобы предприниматели могли открывать счёт, управлять бизнесом и получать сервисы в одном месте. Всё — онлайн, без бумажной волокиты.
-              </p>
+          <div className="relative">
+            {/* Logo positioned top right */}
+            <div className="absolute top-0 right-0 w-48 h-16 bg-white rounded-xl shadow-md flex items-center justify-center hover:shadow-lg transition-shadow duration-300">
+              <Image
+                src="/rbk_logo.png"
+                alt="RBK Bank Logo"
+                width={160}
+                height={48}
+                className="object-contain"
+              />
             </div>
-            <div className="flex justify-center">
-              <div className="relative w-full max-w-md">
-                <div className="absolute -z-10 top-0 left-1/2 -translate-x-1/2 h-72 w-72 rounded-full bg-[#F0F4FF] blur-3xl opacity-70"></div>
-                <Image
-                  src="/entrepreneur.svg"
-                  alt="Предприниматель с сервисами Pluse.kz"
-                  width={500}
-                  height={500}
-                  className="relative z-10 w-auto h-auto"
-                  priority
-                />
+
+            <div className="max-w-2xl">
+              <h2 className="text-4xl font-bold tracking-tight text-[#1A1A1A] mb-8">
+                О Банке
+              </h2>
+              <p className="text-lg text-[#4A4A4A] leading-relaxed mb-12">
+                АО RBK Bank – один из крупнейших частных банков Казахстана. Работает с 1992 года. Обслуживает бизнес и частных клиентов.
+              </p>
+
+              {/* Ratings as modern badges */}
+              <div className="flex flex-wrap gap-4">
+                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-[#F0F4FF]">
+                  <div className="flex items-center gap-3 mb-2">
+                    <ShieldCheck className="h-5 w-5 text-[#8F6ED5]" />
+                    <span className="font-medium text-[#1A1A1A]">Moody's</span>
+                  </div>
+                  <div className="space-y-1">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-2xl font-bold text-[#1A1A1A]">Ba2</span>
+                      <span className="text-sm text-[#4A4A4A]">депозиты</span>
+                    </div>
+                    <div className="text-sm text-[#4A4A4A]">Прогноз: стабильный</div>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-[#F0F4FF]">
+                  <div className="flex items-center gap-3 mb-2">
+                    <LineChart className="h-5 w-5 text-[#8F6ED5]" />
+                    <span className="font-medium text-[#1A1A1A]">Moody's</span>
+                  </div>
+                  <div className="space-y-1">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-2xl font-bold text-[#1A1A1A]">Ba1</span>
+                      <span className="text-sm text-[#4A4A4A]">контрагент</span>
+                    </div>
+                    <div className="text-sm text-[#4A4A4A]">12.09.2024</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Digital Branch Block */}
+      <section className="py-24 sm:py-32 bg-[#FDFCFB] relative overflow-hidden">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute inset-y-0 w-full bg-[radial-gradient(100%_50%_at_50%_100%,_var(--tw-gradient-stops))] from-[#F0F4FF] via-white to-white opacity-60"></div>
+        </div>
+
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="relative">
+            <div className="max-w-2xl">
+              <h2 className="text-4xl font-bold tracking-tight text-[#1A1A1A] mb-8">
+                О цифровом филиале
+              </h2>
+              <p className="text-lg text-[#4A4A4A] leading-relaxed mb-12">
+                Pluse.kz создан в партнёрстве с RBK Bank, чтобы предприниматели могли открывать счёт, управлять бизнесом и получать сервисы в одном месте. Всё — онлайн, без бумажной волокиты.
+              </p>
+
+              <div className="inline-flex items-center gap-2 group">
+                <Link
+                  href="/services"
+                  className="inline-flex items-center px-8 py-4 rounded-2xl text-base font-medium bg-[#8F6ED5] text-white shadow-sm hover:bg-[#7C5CC3] transition-all duration-300"
+                >
+                  Все сервисы
+                  <ArrowRight className="ml-2 -mr-1 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Decorative element */}
+            <div className="absolute top-0 right-0 -z-10 h-48 w-48 rounded-full bg-gradient-to-r from-[#8F6ED5] to-[#E0FF4F] opacity-20 blur-3xl"></div>
+            <div className="absolute bottom-0 right-24 -z-10 h-32 w-32 rounded-full bg-gradient-to-r from-[#E0FF4F] to-[#8F6ED5] opacity-20 blur-2xl"></div>
+          </div>
+        </div>
+      </section>
 
       {/* Why People Trust Us */}
       <div id="trust" className="py-24 sm:py-32 bg-[#FDFCFB]">

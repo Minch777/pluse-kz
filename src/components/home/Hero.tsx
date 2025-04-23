@@ -49,7 +49,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative isolate overflow-hidden pt-36 pb-32">
+    <section className="relative isolate overflow-hidden py-16 md:py-32">
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
         <Image
@@ -63,14 +63,14 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#1A1A1A]"
+              className="mt-8 md:mt-0 text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#1A1A1A] text-center md:text-left"
             >
               Необанк для{' '}
               <span className="text-[#8F6ED5]">предпринимателей</span>
@@ -79,7 +79,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="mt-6 text-lg leading-8 text-[#4A4A4A]"
+              className="mt-6 text-base md:text-lg leading-8 text-[#4A4A4A] text-center md:text-left"
             >
               Откройте счёт за 5 минут, предложите клиентам рассрочку 0%, запустите интернет-магазин и автоматизируйте бухгалтерию.
             </motion.p>
@@ -88,17 +88,17 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-10 flex items-center gap-6"
+              className="mt-10 flex flex-col md:flex-row items-center gap-6"
             >
               <Link
                 href="/register"
-                className="bg-[#8F6ED5] text-white px-8 py-4 rounded-2xl text-base font-medium shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300"
+                className="w-full md:w-auto bg-[#8F6ED5] text-white px-8 py-4 rounded-2xl text-base font-medium shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 text-center"
               >
                 Открыть счёт
               </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center text-[#8F6ED5] font-medium hover:opacity-80 transition-opacity"
+                className="w-full md:w-auto text-center inline-flex items-center justify-center text-[#8F6ED5] font-medium hover:opacity-80 transition-opacity"
               >
                 Узнать больше →
               </Link>
@@ -109,30 +109,37 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="mt-16 pt-8 border-t border-[#E5E7EB]"
+              className="mt-4 md:mt-16 pt-3 md:pt-8 border-t border-[#E5E7EB]"
             >
-              <div className="flex items-center gap-8">
-                <Image
-                  src="/people_home.svg"
-                  alt="Предприниматели"
-                  width={480}
-                  height={120}
-                  className="h-24 w-auto"
-                />
-                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full">
-                  <div className="w-5 h-5 text-[#FF69B4]">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                    </svg>
-                  </div>
-                  <span className="text-sm font-medium text-[#1A1A1A]">100+ предпринимателей уже с нами</span>
+              <div className="flex flex-col md:flex-row items-center gap-1 md:gap-8">
+                <div className="flex justify-center w-full md:w-auto">
+                  <Image
+                    src="/people_home.svg"
+                    alt="Предприниматели"
+                    width={480}
+                    height={120}
+                    className="h-24 md:h-24 w-auto"
+                  />
+                </div>
+                <div className="-mt-6 md:mt-0 flex items-center justify-center w-full md:w-auto gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full">
+                  <span className="text-sm font-medium text-center text-[#1A1A1A] whitespace-nowrap flex items-center">
+                    <span className="flex items-center gap-1">
+                      <div className="w-4 h-4 text-[#FF69B4] flex-shrink-0">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                      </div>
+                      100+
+                    </span>
+                    {' '}предпринимателей уже с нами
+                  </span>
                 </div>
               </div>
             </motion.div>
           </div>
 
           {/* Right Content - Phone with Cards */}
-          <div className="relative flex justify-end">
+          <div className="relative hidden md:flex justify-end">
             <AnimatePresence>
               {!isLoading && (
                 <motion.div 
