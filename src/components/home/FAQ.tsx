@@ -44,34 +44,34 @@ export default function FAQ() {
     <section className="py-16 bg-[#FDFCFB]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1A1A1A]">
             Частые вопросы
           </h2>
-          <p className="mt-6 text-lg text-[#4A4A4A]">
+          <p className="mt-6 text-base md:text-lg text-[#4A4A4A]">
             Отвечаем на популярные вопросы предпринимателей
           </p>
         </div>
 
-        <div className="mx-auto mt-16 max-w-3xl">
+        <div className="mx-auto mt-12 md:mt-16 max-w-3xl">
           {faqItems.map((faq, index) => (
             <div 
               key={index} 
-              className="group bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.06)] mb-4 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300"
+              className="group bg-white rounded-2xl p-4 md:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.06)] mb-3 md:mb-4 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300"
             >
               <motion.button
                 initial={false}
                 className="flex w-full items-start justify-between text-left"
                 onClick={() => toggleItem(index)}
               >
-                <span className="text-lg font-medium text-[#1A1A1A] pr-8">{faq.question}</span>
+                <span className="text-base md:text-lg font-medium text-[#1A1A1A] pr-6 md:pr-8">{faq.question}</span>
                 <div className="flex-shrink-0">
                   <div 
-                    className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-200 ${
+                    className={`w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center transition-colors duration-200 ${
                       expandedItems.has(index) ? 'bg-[#E0FF4F]' : 'bg-[#F0F4FF]'
                     }`}
                   >
                     <ChevronDown
-                      className={`h-5 w-5 transform transition-transform duration-200 ${
+                      className={`h-4 w-4 md:h-5 md:w-5 transform transition-transform duration-200 ${
                         expandedItems.has(index) ? 'rotate-180 text-[#1A1A1A]' : 'text-[#8F6ED5]'
                       }`}
                     />
@@ -87,7 +87,7 @@ export default function FAQ() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <p className="mt-4 text-[#4A4A4A] leading-relaxed pr-8">{faq.answer}</p>
+                    <p className="mt-3 md:mt-4 text-sm md:text-base text-[#4A4A4A] leading-relaxed pr-6 md:pr-8">{faq.answer}</p>
                   </motion.div>
                 )}
               </AnimatePresence>

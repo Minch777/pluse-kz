@@ -10,10 +10,10 @@ export default function Trust() {
     <section className="py-16 bg-[#FDFCFB]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1A1A1A]">
             Почему нам доверяют предприниматели
           </h2>
-          <p className="mt-6 text-lg text-[#4A4A4A]">
+          <p className="mt-6 text-base md:text-lg text-[#4A4A4A]">
             Pluse.kz сочетает банковскую надёжность, венчурную поддержку и активное сообщество
           </p>
         </div>
@@ -24,21 +24,21 @@ export default function Trust() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300"
+            className="bg-white rounded-3xl p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300"
           >
-            <div className="flex items-start gap-8">
+            <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-8">
               <Image
                 src="/rbk_logo.png"
                 alt="RBK Bank"
                 width={120}
                 height={40}
-                className="h-10 w-auto object-contain"
+                className="h-10 w-auto object-contain mx-auto md:mx-0"
               />
-              <div className="flex-1">
-                <h3 className="text-xl font-semibold text-[#1A1A1A]">
+              <div className="flex-1 text-center md:text-left">
+                <h3 className="text-xl md:text-2xl font-semibold text-[#1A1A1A]">
                   Pluse.kz — цифровой филиал RBK Bank
                 </h3>
-                <p className="mt-3 text-[#4A4A4A]">
+                <p className="mt-3 text-base md:text-lg text-[#4A4A4A]">
                   Счета и операции открываются через лицензированный банк. Мы работаем под надзором Национального Банка РК и соблюдаем все требования регулятора.
                 </p>
                 <div className="mt-6">
@@ -61,21 +61,21 @@ export default function Trust() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300"
+              className="bg-white rounded-3xl p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300"
             >
-              <div className="flex items-start gap-8">
+              <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-8">
                 <Image
                   src="/astanahub_logo.svg"
                   alt="Astana Hub"
                   width={120}
                   height={40}
-                  className="h-10 w-auto object-contain"
+                  className="h-10 w-auto object-contain mx-auto md:mx-0"
                 />
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-[#1A1A1A]">
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-xl md:text-2xl font-semibold text-[#1A1A1A]">
                     Резидент Astana Hub
                   </h3>
-                  <p className="mt-3 text-[#4A4A4A]">
+                  <p className="mt-3 text-base md:text-lg text-[#4A4A4A]">
                     Мы развиваемся в крупнейшем IT-хабе Центральной Азии и создаём инновационные финтех-решения.
                   </p>
                 </div>
@@ -87,21 +87,21 @@ export default function Trust() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-white rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300"
+              className="bg-white rounded-3xl p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300"
             >
-              <div className="flex items-start gap-8">
+              <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-8">
                 <Image
                   src="/tumar_logo.png"
                   alt="Tumar Ventures"
                   width={120}
                   height={40}
-                  className="h-10 w-auto object-contain"
+                  className="h-10 w-auto object-contain mx-auto md:mx-0"
                 />
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-[#1A1A1A]">
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-xl md:text-2xl font-semibold text-[#1A1A1A]">
                     Поддержка Tumar Ventures
                   </h3>
-                  <p className="mt-3 text-[#4A4A4A]">
+                  <p className="mt-3 text-base md:text-lg text-[#4A4A4A]">
                     Наш проект поддерживает один из самых активных венчурных фондов Казахстана.
                   </p>
                 </div>
