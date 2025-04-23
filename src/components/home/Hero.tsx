@@ -50,16 +50,9 @@ export default function Hero() {
 
   return (
     <section className="relative isolate overflow-hidden py-16 md:py-32">
-      {/* Background image */}
+      {/* Background gradient */}
       <div className="absolute inset-0 -z-10">
-        <Image
-          src="/hero_home.png"
-          alt="Hero background"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/80 to-white/90"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(80%_80%_at_50%_50%,_var(--tw-gradient-stops))] from-[#F0F4FF] via-white to-white"></div>
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
