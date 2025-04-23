@@ -110,7 +110,7 @@ export default function Header() {
             >
               Партнёрам
             </Link>
-            <Link
+            <Link 
               href="/about"
               className={`text-[#4A4A4A] text-sm hover:text-[#8F6ED5] transition-colors ${
                 pathname === "/about" ? 'text-[#8F6ED5]' : ''
