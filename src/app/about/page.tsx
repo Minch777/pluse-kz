@@ -98,7 +98,7 @@ export default function DigitalBranch() {
                 О цифровом филиале
               </h2>
               <p className="text-lg text-[#4A4A4A] leading-relaxed mb-12">
-                Pluse.kz создан в партнёрстве с RBK Bank, чтобы предприниматели могли открывать счёт, управлять бизнесом и получать сервисы в одном месте. Всё — онлайн, без бумажной волокиты.
+                Pluse.kz создан в партнерстве с RBK Bank, чтобы предприниматели могли открывать счет, управлять бизнесом и получать сервисы в одном месте. Все — онлайн, без бумажной волокиты.
               </p>
 
               <div className="inline-flex items-center gap-2 group">
@@ -161,7 +161,7 @@ export default function DigitalBranch() {
                 <Building className="h-8 w-8 text-[#1A1A1A]" />
               </div>
               <h3 className="text-xl font-semibold text-[#1A1A1A] mb-3">
-                Партнёр RBK Bank
+                Партнер RBK Bank
               </h3>
               <p className="text-[#4A4A4A]">
                 Все счета открываются через лицензированный казахстанский банк.
@@ -176,7 +176,7 @@ export default function DigitalBranch() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl">
-              Хотите стать партнёром?
+              Хотите стать партнером?
             </h2>
             <p className="mt-6 text-lg text-[#4A4A4A]">
               Пишите нам на partner@pluse.kz или в WhatsApp.

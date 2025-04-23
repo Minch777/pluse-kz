@@ -10,20 +10,21 @@ export default function HowToConnect() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1A1A1A]">
-            Как подключиться к Pluse.kz
+            Как подключиться
           </h2>
           <p className="mt-6 text-base md:text-lg text-[#4A4A4A]">
-            Подключение занимает 5 минут. Всё онлайн, без визита в банк и лишних документов.
+            Два простых шага для начала работы
           </p>
         </div>
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:gap-12">
-          {/* Card 1 - Open Account */}
+          {/* Step 1 */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 0.6,
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.5,
               ease: "easeOut"
             }}
             className="relative bg-white rounded-3xl p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-shadow duration-300 overflow-hidden group"
@@ -36,30 +37,31 @@ export default function HowToConnect() {
                 <span className="text-[#8F6ED5] font-medium">Регистрация</span>
               </div>
               <h3 className="text-xl md:text-2xl font-semibold text-[#1A1A1A] mb-4">
-                Откройте счёт
+                Зарегистрируйтесь и подтвердите личность
               </h3>
               <p className="text-base text-[#4A4A4A] mb-8">
-                Создайте аккаунт и откройте расчётный счёт онлайн за 5 минут. Без посещения банка.
+                Заполните анкету и загрузите документы. Мы проверим данные за 1 день.
               </p>
               <Link
                 href="/register"
                 className="inline-flex items-center text-[#8F6ED5] font-medium group-hover:opacity-80 transition-all"
               >
-                Открыть счёт
+                Начать регистрацию
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </div>
             <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-transparent to-[#F9FAFF] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </motion.div>
 
-          {/* Card 2 - All Services */}
+          {/* Step 2 */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 0.6,
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.5,
+              delay: 0.2,
               ease: "easeOut",
-              delay: 0.2
             }}
             className="relative bg-white rounded-3xl p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-shadow duration-300 overflow-hidden group"
           >
@@ -71,16 +73,16 @@ export default function HowToConnect() {
                 <span className="text-[#8F6ED5] font-medium">Сервисы</span>
               </div>
               <h3 className="text-xl md:text-2xl font-semibold text-[#1A1A1A] mb-4">
-                Подключите сервисы
+                Выберите нужные сервисы
               </h3>
               <p className="text-base text-[#4A4A4A] mb-8">
-                Выберите нужные инструменты для вашего бизнеса. Всё работает из одного кабинета.
+                Подключите только те модули, которые нужны вашему бизнесу.
               </p>
               <Link
                 href="/services"
                 className="inline-flex items-center text-[#8F6ED5] font-medium group-hover:opacity-80 transition-all"
               >
-                Все сервисы
+                Посмотреть сервисы
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </div>
