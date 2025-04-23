@@ -105,26 +105,18 @@ const trustCards = [
 const Hero = () => {
   return (
     <section className="relative pt-32 pb-20 bg-white">
-      {/* Фоновое изображение */}
+      {/* Градиентный фон вместо изображения */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <Image
-          src="/hero_home.jpg"
-          alt="Background"
-          fill
-          className="object-cover"
-          priority
-        />
-        {/* Overlay для улучшения читаемости текста */}
-        <div className="absolute inset-0 bg-black/25"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(80%_70%_at_50%_30%,_var(--tw-gradient-stops))] from-[#F0F4FF] via-white to-white opacity-90"></div>
       </div>
 
       <div className="container relative z-10 mx-auto px-4">
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-6">
             Финансовые сервисы для{' '}
-            <span className="text-[#C6D9FD]">вашего бизнеса</span>
+            <span className="text-[#8F6ED5]">вашего бизнеса</span>
           </h1>
-          <p className="text-xl text-gray-200 mb-8">
+          <p className="text-xl text-[#4A4A4A] mb-8">
             BNPL, интернет-магазин и онлайн-бухгалтерия — всё в одном месте
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-6">
