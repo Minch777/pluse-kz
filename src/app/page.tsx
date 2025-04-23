@@ -69,21 +69,21 @@ const services = [
 const trustCards = [
   {
     id: 'reliability',
-    icon: ShieldCheck,
+    logo: '/rbk_logo.png',
     color: 'bg-[#7C3AED]',
     title: 'Pluse.kz — цифровой филиал RBK Bank',
     description: 'Все счета и операции открываются через лицензированный банк'
   },
   {
     id: 'investors',
-    icon: PiggyBank,
+    logo: '/tumar_logo.png',
     color: 'bg-[#FACC15]',
     title: 'Нас профинансировал фонд Tumar Ventures',
     description: 'Фонд инвестирует в сильные и масштабируемые финтех-стартапы'
   },
   {
     id: 'astana-hub',
-    icon: MapPin,
+    logo: '/astanahub_logo.svg',
     color: 'bg-[#38BDF8]',
     title: 'Pluse.kz — резидент Astana Hub',
     description: 'Мы развиваемся в крупнейшем технопарке Центральной Азии'
@@ -944,9 +944,9 @@ export default function Home() {
                                 {[...Array(9)].map((_, i) => (
                                   <div key={i} className="w-1.5 h-1.5 bg-[#40E0D0] rounded-sm"></div>
                                 ))}
-                              </div>
                             </div>
                           </div>
+                        </div>
                         </div>
 
                         {/* Financial Report Interface */}
@@ -1005,53 +1005,147 @@ export default function Home() {
                     )}
                     {activeTab === "other" && (
                     <div className="space-y-6">
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="bg-[#F9FAFF] rounded-xl p-4">
-                          <div className="flex items-center gap-3 mb-3">
-                            <div className="h-10 w-10 bg-[#E0FF4F] rounded-xl flex items-center justify-center">
-                              <CreditCard className="h-5 w-5 text-[#1A1A1A]" />
+                      {/* Header */}
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="space-y-1">
+                          <div className="text-lg font-medium text-[#8F6ED5]">Все сервисы</div>
+                          <div className="text-sm text-[#4A4A4A]">Всё, что нужно для роста бизнеса</div>
                             </div>
-                            <div>
-                              <div className="text-sm font-medium text-[#1A1A1A]">Бизнес-карта</div>
-                              <div className="text-xs text-[#4A4A4A]">Visa Business</div>
-                          </div>
-                      </div>
-                          <div className="text-lg font-medium text-[#8F6ED5]">500 000 ₸</div>
-                          <div className="text-xs text-[#4A4A4A] mt-1">Доступный лимит</div>
-                  </div>
-                        <div className="bg-[#F9FAFF] rounded-xl p-4">
-                          <div className="flex items-center gap-3 mb-3">
-                            <div className="h-10 w-10 bg-[#E0FF4F] rounded-xl flex items-center justify-center">
-                              <Search className="h-5 w-5 text-[#1A1A1A]" />
-                </div>
-                            <div>
-                              <div className="text-sm font-medium text-[#1A1A1A]">Проверка</div>
-                              <div className="text-xs text-[#4A4A4A]">Контрагентов</div>
-              </div>
-            </div>
-                          <div className="text-lg font-medium text-[#1A1A1A]">Безопасно</div>
-                          <div className="text-xs text-[#4A4A4A] mt-1">Все контрагенты проверены</div>
-            </div>
-          </div>
-                      <div className="bg-[#F9FAFF] rounded-xl p-4">
-                        <div className="flex items-center gap-3 mb-3">
-                          <div className="h-10 w-10 bg-[#E0FF4F] rounded-xl flex items-center justify-center">
-                            <Building2 className="h-5 w-5 text-[#1A1A1A]" />
-                          </div>
-                          <div>
-                            <div className="text-sm font-medium text-[#1A1A1A]">Бизнес-банкинг</div>
-                            <div className="text-xs text-[#4A4A4A]">KZ123456789</div>
+                        <div className="h-14 w-14 bg-[#8F6ED5] rounded-xl flex items-center justify-center">
+                          <div className="grid grid-cols-2 gap-1.5">
+                            <div className="w-3 h-3 bg-white rounded"></div>
+                            <div className="w-3 h-3 bg-white rounded"></div>
+                            <div className="w-3 h-3 bg-white rounded"></div>
+                            <div className="w-3 h-3 bg-white rounded"></div>
                           </div>
                         </div>
-                        <div className="flex justify-between items-center mt-2">
-                          <div>
-                            <div className="text-lg font-medium text-[#8F6ED5]">1 250 000 ₸</div>
-                            <div className="text-xs text-[#4A4A4A]">Баланс счёта</div>
+                      </div>
+
+                      {/* Services Mini Interface */}
+                      <div className="bg-white rounded-xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.06)]">
+                        <div className="grid grid-cols-2 gap-4">
+                          <div className="bg-[#F9FAFF] rounded-xl p-4">
+                            <div className="flex items-center gap-3 mb-3">
+                              <div>
+                                <div className="text-sm font-medium text-[#1A1A1A]">Регистрация ТОО</div>
+                                <div className="text-xs text-[#4A4A4A]">Бесплатно</div>
+                              </div>
+                            </div>
+                            <div className="text-xs text-[#4A4A4A] mt-1">Поможем открыть компанию</div>
                           </div>
-                          <div className="text-right">
-                            <div className="text-lg font-medium text-[#1A1A1A]">12</div>
-                            <div className="text-xs text-[#4A4A4A]">Операций сегодня</div>
+                          <div className="bg-[#F9FAFF] rounded-xl p-4">
+                            <div className="flex items-center gap-3 mb-3">
+                              <div>
+                                <div className="text-sm font-medium text-[#1A1A1A]">Бизнес-карта</div>
+                                <div className="text-xs text-[#4A4A4A]">Visa Business</div>
+                              </div>
+                            </div>
+                            <div className="text-xs text-[#4A4A4A] mt-1">Доступный лимит</div>
                           </div>
+                          <div className="bg-[#F9FAFF] rounded-xl p-4">
+                            <div className="flex items-center gap-3 mb-3">
+                              <div>
+                                <div className="text-sm font-medium text-[#1A1A1A]">Проверка контрагентов</div>
+                                <div className="text-xs text-[#4A4A4A]">Безопасно</div>
+                              </div>
+                            </div>
+                            <div className="text-xs text-[#4A4A4A] mt-1">Все партнёры проверены</div>
+                          </div>
+                          <div className="bg-[#F9FAFF] rounded-xl p-4">
+                            <div className="flex items-center gap-3 mb-3">
+                              <div>
+                                <div className="text-sm font-medium text-[#1A1A1A]">Страхование</div>
+                                <div className="text-xs text-[#4A4A4A]">Для бизнеса</div>
+                              </div>
+                            </div>
+                            <div className="text-xs text-[#4A4A4A] mt-1">Онлайн-оформление</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Benefits */}
+                      <div className="grid grid-cols-3 gap-4">
+                        <div className="bg-[#F9FAFF] rounded-xl p-4 text-center">
+                          <div className="w-10 h-10 bg-[#F0F0F0] rounded-full flex items-center justify-center mx-auto mb-3">
+                            <div className="text-xl">⚡️</div>
+                          </div>
+                          <div className="text-sm font-medium text-[#1A1A1A]">Быстро</div>
+                          <div className="text-xs text-[#4A4A4A] mt-1">Онлайн за 5 минут</div>
+                        </div>
+                        <div className="bg-[#F9FAFF] rounded-xl p-4 text-center">
+                          <div className="w-10 h-10 bg-[#F0F0F0] rounded-full flex items-center justify-center mx-auto mb-3">
+                            <div className="text-xl">🔄</div>
+                          </div>
+                          <div className="text-sm font-medium text-[#1A1A1A]">Всё в одном месте</div>
+                          <div className="text-xs text-[#4A4A4A] mt-1">Без визита в банк</div>
+                        </div>
+                        <div className="bg-[#F9FAFF] rounded-xl p-4 text-center">
+                          <div className="w-10 h-10 bg-[#F0F0F0] rounded-full flex items-center justify-center mx-auto mb-3">
+                            <div className="text-xl">🛡️</div>
+                          </div>
+                          <div className="text-sm font-medium text-[#1A1A1A]">Надёжно</div>
+                          <div className="text-xs text-[#4A4A4A] mt-1">Проверенные сервисы</div>
+                        </div>
+                      </div>
+                      </div>
+                    )}
+                  {activeTab === "bank" && (
+                    <div className="space-y-6">
+                      {/* Header */}
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="space-y-1">
+                          <div className="text-lg font-medium text-[#8F6ED5]">Банкинг</div>
+                          <div className="text-sm text-[#4A4A4A]">Счёт и операции онлайн</div>
+                  </div>
+                        <div className="h-14 w-14 bg-black rounded-xl flex items-center justify-center relative">
+                          <div className="w-10 h-6 bg-[#FFD700] rounded-lg absolute top-3"></div>
+                          <div className="w-8 h-5 bg-white rounded-lg absolute bottom-3"></div>
+                        </div>
+                      </div>
+
+                      {/* Mini Interface */}
+                      <div className="bg-white rounded-xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.06)]">
+                        <div className="space-y-4">
+                          <div className="flex justify-between items-center pb-3 border-b border-[#F0F0F0]">
+                            <span className="text-sm text-[#4A4A4A]">Номер счёта</span>
+                            <span className="text-sm font-medium text-[#1A1A1A]">KZ123456789012345</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="text-sm text-[#4A4A4A]">Баланс</span>
+                            <span className="text-lg font-medium text-[#1A1A1A]">2 560 000 ₸</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="text-sm text-[#4A4A4A]">Последняя операция</span>
+                            <div className="text-right">
+                              <div className="text-lg font-medium text-[#8F6ED5]">+180 000 ₸</div>
+                              <div className="text-xs text-[#4A4A4A]">Pluse.Shopping</div>
+                            </div>
+                </div>
+              </div>
+            </div>
+
+                      {/* Benefits */}
+                      <div className="grid grid-cols-3 gap-4">
+                        <div className="bg-[#F9FAFF] rounded-xl p-4 text-center">
+                          <div className="w-10 h-10 bg-[#F0F0F0] rounded-full flex items-center justify-center mx-auto mb-3">
+                            <div className="text-xl">💸</div>
+            </div>
+                          <div className="text-sm font-medium text-[#1A1A1A]">Без визита в банк</div>
+                          <div className="text-xs text-[#4A4A4A] mt-1">Открытие счёта онлайн</div>
+          </div>
+                        <div className="bg-[#F9FAFF] rounded-xl p-4 text-center">
+                          <div className="w-10 h-10 bg-[#F0F0F0] rounded-full flex items-center justify-center mx-auto mb-3">
+                            <div className="text-xl">🔐</div>
+                          </div>
+                          <div className="text-sm font-medium text-[#1A1A1A]">Безопасно</div>
+                          <div className="text-xs text-[#4A4A4A] mt-1">Подключён Bank RBK</div>
+                        </div>
+                        <div className="bg-[#F9FAFF] rounded-xl p-4 text-center">
+                          <div className="w-10 h-10 bg-[#F0F0F0] rounded-full flex items-center justify-center mx-auto mb-3">
+                            <div className="text-xl">📱</div>
+                          </div>
+                          <div className="text-sm font-medium text-[#1A1A1A]">Мобильный доступ</div>
+                          <div className="text-xs text-[#4A4A4A] mt-1">Через приложение</div>
                         </div>
                       </div>
                     </div>
@@ -1064,7 +1158,7 @@ export default function Home() {
       </div>
 
       {/* How it works section */}
-      <div className="py-24 sm:py-32 bg-[#FDFCFB]">
+      <div className="py-16 bg-[#FDFCFB]">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl">
@@ -1199,7 +1293,7 @@ export default function Home() {
       </div>
 
       {/* Trust section */}
-      <div className="py-24 sm:py-32 bg-[#FDFCFB]">
+      <div className="py-16 bg-[#FDFCFB]">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl">
@@ -1214,9 +1308,13 @@ export default function Home() {
             {/* Main card */}
             <div className="bg-white rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300">
               <div className="flex items-start gap-8">
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#F5F5F5]">
-                  <ShieldCheck className="h-8 w-8 text-[#8F6ED5]" />
-                </div>
+                <Image
+                  src="/rbk_logo.png"
+                  alt="RBK Bank"
+                  width={120}
+                  height={40}
+                  className="h-10 w-auto object-contain"
+                />
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold text-[#1A1A1A]">
                     Pluse.kz — цифровой филиал RBK Bank
@@ -1234,13 +1332,6 @@ export default function Home() {
                     </Link>
                   </div>
                 </div>
-                <Image
-                  src="/rbk_logo.png"
-                  alt="RBK Bank"
-                  width={120}
-                  height={40}
-                  className="h-10 w-auto object-contain opacity-80"
-                />
               </div>
             </div>
 
@@ -1248,9 +1339,13 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300">
                 <div className="flex items-start gap-6">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#F5F5F5]">
-                    <PiggyBank className="h-8 w-8 text-[#8F6ED5]" />
-                  </div>
+                  <Image
+                    src="/tumar_logo.png"
+                    alt="Tumar Ventures"
+                    width={120}
+                    height={40}
+                    className="h-8 w-auto object-contain"
+                  />
                   <div>
                     <h3 className="text-lg font-semibold text-[#1A1A1A]">
                       Фонд Tumar Ventures — среди наших инвесторов
@@ -1264,9 +1359,13 @@ export default function Home() {
 
               <div className="bg-white rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300">
                 <div className="flex items-start gap-6">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#F5F5F5]">
-                    <MapPin className="h-8 w-8 text-[#8F6ED5]" />
-                  </div>
+                  <Image
+                    src="/astanahub_logo.svg"
+                    alt="Astana Hub"
+                    width={120}
+                    height={40}
+                    className="h-8 w-auto object-contain"
+                  />
                   <div>
                     <h3 className="text-lg font-semibold text-[#1A1A1A]">
                       Pluse.kz — резидент Astana Hub
@@ -1274,41 +1373,16 @@ export default function Home() {
                     <p className="mt-2 text-[#4A4A4A]">
                       Мы развиваемся в Astana Hub — главном IT-хабе региона
                     </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-            {/* Partners logos */}
-            <div className="mt-16 flex flex-wrap justify-center items-center gap-12">
-              <Image
-                src="/rbk_logo.png"
-                alt="RBK Bank"
-                width={120}
-                height={40}
-                className="h-8 w-auto opacity-60 hover:opacity-80 transition-opacity"
-              />
-              <Image
-                src="/tumar_logo.png"
-                alt="Tumar Ventures"
-                width={120}
-                height={40}
-                className="h-8 w-auto opacity-60 hover:opacity-80 transition-opacity"
-              />
-              <Image
-                src="/astanahub_logo.png"
-                alt="Astana Hub"
-                width={320}
-                height={106}
-                className="h-24 w-auto opacity-60 hover:opacity-80 transition-opacity"
-              />
             </div>
           </div>
         </div>
       </div>
 
       {/* FAQ section */}
-      <div className="py-24 sm:py-32 bg-[#FDFCFB]">
+      <div className="py-16 bg-[#FDFCFB]">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl">
