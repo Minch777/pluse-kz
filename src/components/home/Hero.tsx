@@ -20,7 +20,7 @@ const shopStats = [
 export default function Hero() {
   const [currentBnplStat, setCurrentBnplStat] = useState(0)
   const [currentShopStat, setCurrentShopStat] = useState(0)
-  const [isLoading, setIsLoading] = useState(true)
+  const [isMounted, setIsMounted] = useState(false)
 
   const { scrollY } = useScroll()
   const phoneX = useTransform(scrollY, [0, 300], [0, 300])
@@ -29,9 +29,7 @@ export default function Hero() {
   const springPhoneOpacity = useSpring(phoneOpacity, { stiffness: 100, damping: 30 })
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 100)
+    setIsMounted(true)
     
     const bnplInterval = setInterval(() => {
       setCurrentBnplStat((prev) => (prev + 1) % bnplStats.length)
@@ -42,7 +40,6 @@ export default function Hero() {
     }, 5000)
     
     return () => {
-      clearTimeout(timer)
       clearInterval(bnplInterval)
       clearInterval(shopInterval)
     }
@@ -106,13 +103,17 @@ export default function Hero() {
             >
               <div className="flex flex-col md:flex-row items-center gap-1 md:gap-8">
                 <div className="flex justify-center w-full md:w-auto">
-                  <Image
-                    src="/people_home.svg"
-                    alt="Предприниматели"
-                    width={480}
-                    height={120}
-                    className="h-24 md:h-24 w-auto"
-                  />
+                  {isMounted && (
+                    <Image
+                      src="/people_home.svg"
+                      alt="Предприниматели"
+                      width={480}
+                      height={120}
+                      className="h-24 md:h-24 w-auto"
+                      priority
+                      loading="eager"
+                    />
+                  )}
                 </div>
                 <div className="-mt-6 md:mt-0 flex items-center justify-center w-full md:w-auto gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full">
                   <span className="text-sm font-medium text-center text-[#1A1A1A] whitespace-nowrap flex items-center">
@@ -134,7 +135,7 @@ export default function Hero() {
           {/* Right Content - Phone with Cards */}
           <div className="relative hidden md:flex justify-end">
             <AnimatePresence>
-              {!isLoading && (
+              {isMounted && (
                 <motion.div 
                   initial={{ x: 200, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
