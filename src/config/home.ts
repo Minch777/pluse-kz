@@ -96,7 +96,7 @@ export const trustCards: TrustCard[] = [
 
 export const faqItems: FAQItem[] = [
   {
-    question: "Как открыть счёт в Pluse.kz?",
+    question: 'Как открыть счёт в Pluse.kz?',
     answer: 'Регистрация занимает 5 минут, всё онлайн. После подтверждения личности вы получаете доступ ко всем сервисам.'
   },
   {
