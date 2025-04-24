@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import { Suspense } from 'react'
 
 const inter = Inter({ 
   subsets: ['latin', 'cyrillic'],
@@ -17,6 +18,15 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: '#7F56D9',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+}
+
+function Loading() {
+  return <div className="min-h-screen flex items-center justify-center">
+    <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-primary"></div>
+  </div>
 }
 
 export default function RootLayout({
@@ -26,15 +36,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru" className="h-full scroll-smooth bg-white">
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-      </head>
       <body className={`${inter.className} min-h-full bg-white text-[#171717] antialiased selection:bg-primary/20 selection:text-primary`}>
-        <Header />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
+        <Suspense fallback={<Loading />}>
+          <Header />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+        </Suspense>
       </body>
     </html>
   )

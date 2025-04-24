@@ -78,7 +78,7 @@ export default function DigitalBranch() {
                     </div>
                     <div className="text-sm text-[#4A4A4A]">12.09.2024</div>
                   </div>
-                </div>
+            </div>
               </div>
             </div>
           </div>
@@ -109,8 +109,8 @@ export default function DigitalBranch() {
                   Все сервисы
                   <ArrowRight className="ml-2 -mr-1 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
-              </div>
-            </div>
+        </div>
+      </div>
 
             {/* Decorative element */}
             <div className="absolute top-0 right-0 -z-10 h-48 w-48 rounded-full bg-gradient-to-r from-[#8F6ED5] to-[#E0FF4F] opacity-20 blur-3xl"></div>
